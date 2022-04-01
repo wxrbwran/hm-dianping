@@ -2,9 +2,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://103.105.200.216:3306/hmdp?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://103.105.200.216:49153/hmdp?useSSL=false&serverTimezone=UTC
     username: root
-    password: 123456
+    password: Q!W@e3r4
   redis:
     host: 103.105.200.216
     port: 6379
