@@ -54,13 +54,15 @@ public class BlogController {
     @GetMapping("/of/me")
     public Result queryMyBlog(@RequestParam(value = "current", defaultValue = "1") Integer current) {
         // 获取登录用户
-        User user = UserHolder.getUser();
+//        User user = UserHolder.getUser();
         // 根据用户查询
-        Page<Blog> page = blogService.query()
-                .eq("user_id", user.getId()).page(new Page<>(current, SystemConstants.MAX_PAGE_SIZE));
+//        Page<Blog> page = blogService.query()
+//                .eq("user_id", user.getId()).page(new Page<>(current, SystemConstants.MAX_PAGE_SIZE));
         // 获取当前页数据
-        List<Blog> records = page.getRecords();
-        return Result.ok(records);
+//        List<Blog> records = page.getRecords();
+//        return Result.ok(records);
+        return Result.ok();
+
     }
 
     @GetMapping("/hot")
