@@ -13,7 +13,7 @@ public class RedissonConfig {
     public RedissonClient redissonClient(){
         // 配置
         Config config = new Config();
-        config.useSingleServer().setAddress("redis://103.105.200.216:6379");
+        config.useSingleServer().setAddress("redis://121.37.67.93:32781");
         // 创建RedissonClient对象
         return Redisson.create(config);
     }
