@@ -187,9 +187,9 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
             ids.add(Long.valueOf(tuple.getValue()));
             // 4.2.获取分数(时间戳）
             long time = tuple.getScore().longValue();
-            if(time == minTime){
+            if (time == minTime) {
                 os++;
-            }else{
+            } else {
                 minTime = time;
                 os = 1;
             }

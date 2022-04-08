@@ -10,8 +10,6 @@ import org.springframework.data.geo.Point;
 import org.springframework.data.redis.connection.RedisGeoCommands;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
-import lombok.extern.slf4j.Slf4j;
-
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +24,6 @@ import static com.hmdp.utils.RedisConstants.CACHE_SHOP_KEY;
 import static com.hmdp.utils.RedisConstants.SHOP_GEO_KEY;
 
 @SpringBootTest
-@Slf4j
 class HmDianPingApplicationTests {
 
     @Resource
@@ -50,7 +47,7 @@ class HmDianPingApplicationTests {
         Runnable task = () -> {
             for (int i = 0; i < 100; i++) {
                 long id = redisIdWorker.nextId("order");
-                log.info("id = {}", id);
+                System.out.println("id = " + id);
             }
             latch.countDown();
         };
@@ -60,7 +57,7 @@ class HmDianPingApplicationTests {
         }
         latch.await();
         long end = System.currentTimeMillis();
-        log.info("time = {}", (end - begin));
+        System.out.println("time = " + (end - begin));
     }
 
     @Test
